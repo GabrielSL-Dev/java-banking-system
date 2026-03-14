@@ -46,11 +46,39 @@ public class Main {
                            break;
                        }
 
-                       System.out.println("Nome inálido! Digite apenas letras.");
+                       System.out.println("Nome inálido!");
                    }
 
-                    System.out.print("Digite seu username: ");
-                    String usuario = sc.nextLine();
+                   String usuario;
+                   while(true) {
+
+                       System.out.print("Digite seu Usuário: ");
+                       usuario = sc.nextLine();
+
+                       boolean usuarioExistente = false;
+                       for (Conta c : contas) {
+                           if (c.getUsuario().equalsIgnoreCase(usuario)) {
+                               usuarioExistente = true;
+                               break;
+                           }
+
+                       }
+                       if (usuarioExistente){
+                           System.out.println("Usuário já existente! Digite outro usário.\n");
+                           continue;
+                       }
+                       if(usuario.contains(" ")){
+                           System.out.println("Usuario não pode conter espaços!\n");
+                           continue;
+                       }
+                       if (!usuario.matches(".*[a-zA-Z].*")){
+                           System.out.println("Usuário precisa ter pelo menos uma letra!\n");
+                           continue;
+                       }
+
+
+                       break;
+                   }
 
                     System.out.print("Digite seu senha: ");
                     String senha = sc.nextLine();
@@ -100,12 +128,10 @@ public class Main {
                     System.out.println("======");
 
                     System.out.print("Titular: " + contaLogada.getNome());
-                    System.out.println();
-
                     ContaBancaria contaBancaria = contaLogada.getContaBancaria();
 
                     while (true) {
-                        System.out.println("1 - Depositar");
+                        System.out.println("\n1 - Depositar");
                         System.out.println("2 - Sacar");
                         System.out.println("3 - Ver saldo");
                         System.out.println("4 - Ver histórico");
