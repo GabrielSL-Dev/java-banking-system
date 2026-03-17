@@ -34,15 +34,6 @@ It was created to practice core programming concepts such as:
 
 ---
 
-## 🎯 Future Improvements
-
-* Add graphical interface (GUI)
-* Connect to a database
-* Implement password encryption
-* Add transaction history
-
----
-
 ## 🌎 Versão em Português
 
 # 💳 Sistema Bancário em Java
@@ -79,11 +70,3 @@ Foi desenvolvido para praticar conceitos fundamentais como:
 * Validação de dados
 * Interação com o usuário via terminal
 
----
-
-## 🎯 Melhorias Futuras
-
-* Adicionar interface gráfica (GUI)
-* Integração com banco de dados
-* Criptografia de senha
-* Histórico de transações
